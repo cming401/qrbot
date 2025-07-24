@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 94.1%; /* #F0F0F0 */
+    --foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 38.8 100% 50%; /* #FFA500 */
+    --primary-foreground: 224 71.4% 4.1%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 224 71.4% 4.1%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 202.4 100% 84.3%; /* #B0E2FF */
+    --accent-foreground: 224 71.4% 4.1%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 38.8 100% 50%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 38.8 100% 50%;
+    --primary-foreground: 224 71.4% 4.1%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 202.4 100% 84.3%;
+    --accent-foreground: 224 71.4% 4.1%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 38.8 100% 50%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom styles for AI-generated blog post content */
+@layer components {
+  .blog-post-content {
+      @apply w-full max-w-none prose prose-neutral dark:prose-invert prose-headings:font-headline prose-p:font-body;
+  }
+  .blog-post-content h1 {
+      @apply text-3xl font-bold mb-4 mt-8;
+  }
+  .blog-post-content h2 {
+      @apply text-2xl font-bold mb-3 mt-6;
+  }
+  .blog-post-content h3 {
+      @apply text-xl font-semibold mb-2 mt-4;
+  }
+  .blog-post-content p, 
+  .blog-post-content ul, 
+  .blog-post-content ol {
+      @apply mb-4 leading-relaxed;
+  }
+  .blog-post-content table {
+      @apply w-full border-collapse my-6 text-sm;
+  }
+  .blog-post-content th, 
+  .blog-post-content td {
+      @apply border border-border p-3 text-left;
+  }
+  .blog-post-content th {
+      @apply bg-muted font-semibold;
+  }
+  .blog-post-content a {
+      @apply text-primary hover:underline;
+  }
+  .highlight {
+      @apply bg-accent/20 p-4 rounded-lg my-6 border-l-4 border-accent text-accent-foreground;
+  }
+  .comparison {
+      @apply grid md:grid-cols-2 gap-6 my-6;
+  }
+  .comparison-item {
+      @apply border border-border bg-card text-card-foreground rounded-lg p-4 shadow-sm;
+  }
+  .comparison-item h3 {
+      @apply text-lg font-semibold mb-2 text-foreground;
+  }
+  .data-point {
+      @apply font-bold text-primary;
+  }
+  .conclusion {
+      @apply mt-8 p-6 bg-card rounded-lg shadow-md;
+  }
+  .conclusion h2 {
+      @apply text-xl font-bold mb-4 text-foreground;
+  }
+  .conclusion ol {
+      @apply list-decimal list-inside space-y-2;
+  }
+  .conclusion li {
+      @apply text-destructive/90;
+  }
+}
